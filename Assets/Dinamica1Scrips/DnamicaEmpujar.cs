@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; // Para la UI del cronómetro
 
-public class Dinamica2 : MonoBehaviour
+public class TimeChallenge : MonoBehaviour
 {
-    public float timeLimit = 25f; // Cronómetro de 25 segundos
+    public float timeLimit = 20f;
     private float timeRemaining;
-    public Transform respawnPoint;
 
     // Referencia a la UI del cronómetro
     public TextMeshProUGUI timerText;
@@ -16,29 +14,27 @@ public class Dinamica2 : MonoBehaviour
     void Start()
     {
         timeRemaining = timeLimit;
-        UpdateTimerText(); // Inicializar el cronómetro en pantalla
+        UpdateTimerText();
     }
 
     void Update()
     {
-        // Actualizar el cronómetro
+        // Actualizar cronómetro
         timeRemaining -= Time.deltaTime;
         UpdateTimerText();
 
-        // Si el tiempo se agota, reiniciar la escena
         if (timeRemaining <= 0)
         {
+            // Reiniciar la escena si el tiempo se agota
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-
-        // Reiniciar el nivel si el jugador presiona la tecla R
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
-    // Método para actualizar el cronómetro en la pantalla
+    // Método para actualizar el cronómetro en pantalla
     void UpdateTimerText()
     {
         int minutes = Mathf.FloorToInt(timeRemaining / 60F);
@@ -46,17 +42,13 @@ public class Dinamica2 : MonoBehaviour
         timerText.text = string.Format("{0:0}:{1:00}", minutes, seconds);
     }
 
-    // Detectar si el jugador llega a la plataforma final
+    // Detectar cuando el objeto que estamos empujando llega a la plataforma final
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("ObjMov")) // Verifica si el objeto es el correcto
         {
-            // El jugador llegó a la plataforma final, avanzar a la siguiente escena
+            // El objeto llegó a la plataforma final, cargar la siguiente escena
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        if (other.CompareTag("DeathZone"))
-        {
-            transform.position = respawnPoint.position;
     }
-}    
-}   
+}
