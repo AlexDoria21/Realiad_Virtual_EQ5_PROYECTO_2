@@ -89,5 +89,15 @@ public class PuertaBloqueada : MonoBehaviour
             other.gameObject.SetActive(false);
             // o Destroy(other.gameObject); si prefieres eliminarlo completamente
         }
+          // Detectar si el jugador pisa la plataforma para pasar a la siguiente dinámica
+        if (other.CompareTag("Meta"))
+        {
+            // El jugador pisa la plataforma final, cambiar a la siguiente dinámica
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else if (other.CompareTag("Trampa"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Meta
   - ObjMov
   - Lave
+  - Trampa
   layers:
   - Default
   - TransparentFX
