@@ -10,6 +10,7 @@ TagManager:
   - ObjMov
   - Lave
   - Trampa
+  - Enemy
   layers:
   - Default
   - TransparentFX
