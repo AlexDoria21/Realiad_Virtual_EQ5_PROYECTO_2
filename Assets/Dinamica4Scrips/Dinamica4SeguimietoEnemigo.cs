@@ -20,11 +20,19 @@ public class Dinamica4SeguimietoEnemigo : MonoBehaviour
 
     public float enemySpeed = 3f; // Velocidad del enemigo
 
+    public GameObject meta; // Meta que se activa al recolectar todos los objetos
+
     void Start()
     {
         tiemporestante = timeLimit;
         UpdateTimerText();
         UpdateItemsCollectedText();
+        // Asegurarse de que la meta esté invisible al principio
+        if (meta != null)
+        {
+            meta.GetComponent<MeshRenderer>().enabled = false; // Ocultar el mesh
+            meta.GetComponent<Collider>().enabled = false; // Desactivar el collider
+        }
     }
 
     void Update()
@@ -98,13 +106,18 @@ public class Dinamica4SeguimietoEnemigo : MonoBehaviour
         itemsCollected++;
         UpdateItemsCollectedText();
 
-        // Si se recolectan todos los objetos, avanzar a la siguiente escena
+        // Si se recolectan todos los objetos, desalarece el enemigo y se muestra la meta
         if (itemsCollected >= totalItems)
         {
             if (enemy != null)
             {
                 enemy.SetActive(false); // Desaparecer al enemigo
         }
+            if (meta != null)
+            {
+                meta.GetComponent<MeshRenderer>().enabled = true; // Mostrar la meta
+                meta.GetComponent<Collider>().enabled = true; // Activar el collider
+            }
     }
 }    
 }
