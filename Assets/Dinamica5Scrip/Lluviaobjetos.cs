@@ -10,6 +10,7 @@ public class Lluviaobjetos : MonoBehaviour
     public Transform[] spawnPoints; // Puntos de spawn desde donde caen los objetos
     public float fallSpeed = 5f; // Velocidad de caída
     public float respawnTime = 2f; // Tiempo de espera antes de hacer respawn
+    public Transform respawnPoint; // Punto de respawn del jugador
 
     public int totalCollectibles = 3; // Cantidad de objetos a recolectar
     private int collectedItems = 0; // Contador de objetos recolectados
@@ -77,29 +78,34 @@ public class Lluviaobjetos : MonoBehaviour
         yield return new WaitForSeconds(respawnTime); // Esperar el tiempo de respawn
         RespawnObject(obj); // Volver a hacer el respawn del objeto
     }
-
-    // Detectar si el jugador recolecta un objeto o es golpeado por un objeto
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Proyectil"))
+     
+        if (other.CompareTag("DeathZone"))
         {
-            // Si el jugador es golpeado por un objeto que cae, reiniciar la escena
+            transform.position = respawnPoint.position;
+    }       
+    }
+
+     private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Proyectil"))
+        {
+            Debug.Log("Jugador golpeado por un objeto que cae. Reiniciando escena.");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        if (other.CompareTag("Lave"))
+        if (collision.collider.CompareTag("Lave"))
         {
-            // Si el jugador recolecta un objeto
             collectedItems++;
-            other.gameObject.SetActive(false);
+            collision.gameObject.SetActive(false);
             UpdateCollectedItemsText();
 
-            // Si recolecta todos los objetos, avanzar a la siguiente escena
             if (collectedItems >= totalCollectibles)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }
-}
+ }
 
