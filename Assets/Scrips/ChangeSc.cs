@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class ChangeScenes : MonoBehaviour
+public class ChangeSc : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +15,8 @@ public class ChangeScenes : MonoBehaviour
     {
                 if (Input.GetKeyDown(KeyCode.B))
         {
-            // Cambia a la escena 1 (por nombre o por índice)
-            SceneManager.LoadScene("Intro");
+            SceneManager.LoadScene("Dinmica1");
     }
     }           
 }
+

@@ -91,7 +91,6 @@ public class Lluviaobjetos : MonoBehaviour
     {
         if (collision.collider.CompareTag("Proyectil"))
         {
-            Debug.Log("Jugador golpeado por un objeto que cae. Reiniciando escena.");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
