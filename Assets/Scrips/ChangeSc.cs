@@ -15,7 +15,7 @@ public class ChangeSc : MonoBehaviour
     {
                 if (Input.GetKeyDown(KeyCode.B))
         {
-            SceneManager.LoadScene("Dinmica1");
+            SceneManager.LoadScene("Introduccion");
     }
     }           
 }

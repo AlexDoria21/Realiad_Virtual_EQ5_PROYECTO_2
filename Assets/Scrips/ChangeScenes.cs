@@ -17,7 +17,7 @@ public class ChangeScenes : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.B))
         {
             // Cambia a la escena 1 (por nombre o por índice)
-            SceneManager.LoadScene("Intro");
+            SceneManager.LoadScene("Instrucciones");
     }
     }           
 }
