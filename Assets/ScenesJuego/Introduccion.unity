@@ -313,9 +313,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Faltan pocas horas para Halloween y Mark e Nancy decide tomar un atajo
-    por el viejo bosque del pueblo el cual dicen todos los ancaianos del mismo pueblo
-    que esta maldecido por una antigua bruja que hacecha el lugar.
+  m_text: Al adentrarse al bosque todo se volvio tetrico y nublado, Mark al tratar
+    de quitarse el traje de halloween para poder ver mejor perdio de vista a Nancy,
+    lo que llevo a Mark a adentrarse mas al bosque, pero con lo unico con lo que
+    se topo fue con un  arroyo y troncos de por medio y una luz del otro lado, tenia
+    que ir.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -433,7 +435,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 436729411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e619ad82053064b9e356f1a197b948, type: 3}
+  m_Script: {fileID: 11500000, guid: f8ac605cfc698fd4b88754e17446b7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &469093643
@@ -844,7 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
