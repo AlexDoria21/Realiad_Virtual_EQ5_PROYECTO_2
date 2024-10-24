@@ -21,8 +21,14 @@ EditorBuildSettings:
     path: Assets/ScenesJuego/Dinmica2.unity
     guid: 4f964e616e4f183488df91519db4d542
   - enabled: 1
-    path: Assets/ScenesJuego/Dinmica1.unity
-    guid: aef03763343346a408835b9413ee6e40
+    path: Assets/ScenesJuego/Int2.unity
+    guid: e15340d6888fb3f448c8ebd804b7b6e3
+  - enabled: 1
+    path: Assets/ScenesJuego/Int3.unity
+    guid: a10ede880968bb44494183b5baae8737
+  - enabled: 1
+    path: Assets/ScenesJuego/Int4.unity
+    guid: 4c3eeb2a555bb0d4d9a9863fd78fa4b6
   - enabled: 1
     path: Assets/ScenesJuego/Dinmica3.unity
     guid: d011628913707bf47b06838d3689fd1f
@@ -32,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ScenesJuego/Dinmica5.unity
     guid: bb949de8e59c7d04bb0f5dfb300948a9
+  - enabled: 1
+    path: Assets/ScenesJuego/Dinmica1.unity
+    guid: aef03763343346a408835b9413ee6e40
   - enabled: 1
     path: Assets/ScenesJuego/Fin.unity
     guid: 4bb6ffe3d5b3a7049821fe6e6ee254a1
